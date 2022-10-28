@@ -30,3 +30,31 @@
 pip is a package manager for Python. It's a tool that allows you to install and manage additional libraries and dependencies that are not distributed as part of the standard library.*
 
     sudo apt-get install python3-setuptools python3-pip
+ 
+### STEP 4 Install virtualenv
+
+*virtualenv is a tool for creating isolated Python environments containing their own copy of python , pip , and their own place to keep libraries installed from PyPI. It's designed to allow you to work on multiple projects with different dependencies at the same time on the same machine.*
+
+    sudo apt-get install virtualenv
+    
+CHECK PYTHON VERSION
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
