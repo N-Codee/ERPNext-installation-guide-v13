@@ -114,8 +114,6 @@ Now press (Ctrl-X) to exit
 *Wkhtmltopdf is an open source simple and much effective command-line shell utility that enables user to convert any given HTML (Web Page) to PDF document or an image (jpg, png, etc)*
 
     sudo apt-get install xvfb libfontconfig wkhtmltopdf
-    
-***if you have to setup production server go to Step 16 else continue***
 
 ### STEP 12 install frappe-bench
 
@@ -133,23 +131,52 @@ above step will take pull from default frappe git. if you have private repo run 
 
 
     bench init [bench-name] git_repo_url --branch [barnch_name]
-
-    cd [bench-name]
-    bench start
     
-### Remove and re-install frappe
+### STEP 14 Remove and re-install frappe
 
 *bench initialization comes with frappe app from develop branch. we need to install frappe from version-13 branch*
 
-from frappe git
+for frappe git
 
     bench get-app frappe --branch version-13 
 
-from private repo
+for private repo
 
     bench get-app frappe [git_repo_url] --branch [branch_name] 
  
- 
+### STEP 15 create a site in frappe bench
+
+    bench new-site [site-name]
+    
+### STEP 16 install ERPNext
+
+for frappe git
+
+    bench get-app erpnext --branch version-13
+
+for private repo
+
+    bench get-app erpnext [git_repo_url] --branch [branch_name] 
+    
+### STEP 17 install erpnext in your site
+
+    bench --site [site-name] install-app erpnext
+    
+*if you have multiple sites*
+
+    bench use [site-name]
+    
+### STEP 18 enable developer mode and start bench
+
+    bench set-config developer_mode 1
+    
+    bench start
+    
+    bench migrate
+    
+    bench --site [site-name] migrate  (optional)
+    
+
  
  
  
