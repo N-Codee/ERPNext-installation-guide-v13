@@ -14,3 +14,19 @@
 ### STEP 1 Install git
 
 *Git is the most commonly used version control system. Git tracks the changes you make to files, so you have a record of what has been done, and you can revert to specific versions should you ever need to. Git also makes collaboration easier, allowing changes by multiple people to all be merged into one source.*
+
+    sudo apt-get install git
+    
+### STEP 2 install python-dev
+
+*python-dev is the package that contains the header files for the Python C API, which is used by lxml because it includes Python C extensions for high performance.*
+    
+    sudo apt-get install python3-dev
+    
+### STEP 3 Install setuptools and pip (Python's Package Manager)
+
+*Setuptools is a collection of enhancements to the Python distutils that allow developers to more easily build and distribute Python packages, especially ones that have dependencies on other packages. Packages built and distributed using setuptools look to the user like ordinary Python packages based on the distutils.
+
+pip is a package manager for Python. It's a tool that allows you to install and manage additional libraries and dependencies that are not distributed as part of the standard library.*
+
+    sudo apt-get install python3-setuptools python3-pip
