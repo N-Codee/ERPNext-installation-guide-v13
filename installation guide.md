@@ -10,3 +10,5 @@
     wkhtmltopdf (version 0.12.5 with patched qt)  (for pdf generation)
     cron                                          (bench's scheduled jobs: automated certificate renewal, scheduled backups)
     NGINX                                         (proxying multitenant sites in production)
+
+### STEP 1 Install git
