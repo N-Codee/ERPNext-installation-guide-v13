@@ -38,7 +38,21 @@ pip is a package manager for Python. It's a tool that allows you to install and 
     sudo apt-get install virtualenv
     
 CHECK PYTHON VERSION
- 
+
+    python3 -V
+    
+### For Python 3.10.x
+
+    sudo apt install python3.10-venv
+    
+### STEP 5 Install MariaDB 10.3 stable package
+
+For ubuntu 20.04
+    sudo apt-get install software-properties-common
+    sudo apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
+    sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el] https://ftp.icm.edu.pl/pub/unix/database/mariadb/repo/10.3/ubuntu focal main'
+    sudo apt update
+    sudo apt install mariadb-server
  
  
  
