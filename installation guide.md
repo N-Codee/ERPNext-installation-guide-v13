@@ -64,9 +64,90 @@ For ubuntu 18.04
     sudo apt install mariadb-server
     
 **_IMPORTANT_** :During this installation you'll be prompted to set the MySQL root password. If you are not prompted for the same You can initialize the MySQL server setup by executing the following command
- 
- 
- 
+
+    sudo mysql_secure_installation
+    
+### STEP 6 MySQL database development files
+
+    sudo apt-get install libmysqlclient-dev
+    
+### STEP 7 Edit the mariadb configuration ( unicode character encoding )
+
+    sudo nano /etc/mysql/my.cnf
+
+add this to the my.cnf file
+
+    [mysqld]
+    character-set-client-handshake = FALSE
+    character-set-server = utf8mb4
+    collation-server = utf8mb4_unicode_ci
+
+    [mysql]
+    default-character-set = utf8mb4
+    
+Now press (Ctrl-X) to exit
+
+    sudo service mysql restart
+    
+### STEP 8 install Redis
+
+*Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache, and message broker.*
+
+    sudo apt-get install redis-server
+    
+### STEP 9 install Node.js 14.X package
+
+*Node.js is an open source, cross-platform runtime environment for developing server-side and networking applications. Node.js applications are written in JavaScript, and can be run within the Node.js runtime on OS X, Microsoft Windows, and Linux.*
+
+    sudo apt-get install curl
+    curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+
+### STEP 10 install Yarn
+
+*Yarn is a JavaScript package manager that aims to be speedy, deterministic, and secure. See how easy it is to drop yarn in where you were using npm before, and get faster, more reliable installs. Yarn is a package manager for JavaScript.*
+
+    sudo npm install -g yarn
+    
+### STEP 11 install wkhtmltopdf
+
+*Wkhtmltopdf is an open source simple and much effective command-line shell utility that enables user to convert any given HTML (Web Page) to PDF document or an image (jpg, png, etc)*
+
+    sudo apt-get install xvfb libfontconfig wkhtmltopdf
+    
+***if you have to setup production server go to Step 16 else continue***
+
+### STEP 12 install frappe-bench
+
+    sudo -H pip3 install frappe-bench
+    
+    bench --version
+    
+If version is not showing restart your system
+
+### STEP 13 initilise the frappe bench & install frappe latest version
+
+    bench init [bench-name] --branch version-13
+    
+above step will take pull from default frappe git. if you have private repo run below cmd
+
+
+    bench init [bench-name] git_repo_url --branch [barnch_name]
+
+    cd [bench-name]
+    bench start
+    
+### Remove and re-install frappe
+
+*bench initialization comes with frappe app from develop branch. we need to install frappe from version-13 branch*
+
+from frappe git
+
+    bench get-app frappe --branch version-13 
+
+from private repo
+
+    bench get-app frappe [git_repo_url] --branch [branch_name] 
  
  
  
