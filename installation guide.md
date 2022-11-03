@@ -1,4 +1,4 @@
-# ERPNext-installation-Guide ubuntu 18, 20
+# ERPNext-installation-Guide ubuntu 18, 20, 22
 ## Pre-requisites
 
     Python 3.10+
