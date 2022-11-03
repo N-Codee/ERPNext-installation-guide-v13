@@ -125,12 +125,7 @@ If version is not showing restart your system
 
 ### STEP 13 initilise the frappe bench & install frappe latest version
 
-    bench init [bench-name] --branch version-13
-    
-above step will take pull from default frappe git. if you have private repo run below cmd
-
-
-    bench init [bench-name] git_repo_url --branch [barnch_name]
+    bench init [bench-name]
     
 ### STEP 14 Remove and re-install frappe
 
